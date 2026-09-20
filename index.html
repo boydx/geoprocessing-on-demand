@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Geoprocessing on Demand: KyFromAbove in the field</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Edu+SA+Beginner:wght@400..700&display=swap"
+        rel="stylesheet">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hubot+Sans:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet"> -->
+
+    <link rel="stylesheet" href="https://uky-gis.github.io/geo509/slides/dist/reset.css" />
+    <link rel="stylesheet" href="https://uky-gis.github.io/geo509/slides/dist/reveal.css" />
+    <link rel="stylesheet" href="https://uky-gis.github.io/geo509/slides/dist/theme/league-109.css" id="theme" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="https://uky-gis.github.io/geo509/slides/dist/plugin/highlight/zenburn.css"
+        id="highlight-theme" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div class="reveal">
+        <!-- <div class="top-module">
+            <a target='_blank' href="https://github.com/boydx/inside-outside">Repo</a>
+        </div> -->
+        <div class="slides">
+            <section data-pre-load data-background-image="images/background.jpg" data-background-opacity="0.2">
+                <span class="title-font">Geoprocessing on Demand</span>
+                <h5 class="sub-title-font">KyFromAbove in the field</h5>
+                <h4>@<a href="https://boyd.xyz/g" target="_blank">boyd.xyz/g</a></h4>
+                <!-- <h2>Welcome</h2> -->
+                <div class="ll" >
+                    Kentucky GIS Conference
+                    <!-- Oblique image of downtown Louisville. Find more
+                    <a href="https://boydx.github.io/phase-3-oblique-centroids" target="_blank">Ky obliques</a> -->
+                </div>
+                <div class='lr'>October 1, 2026</div>
+            </section>
+            <section class='left' data-background-image="images/background.jpg" data-background-opacity="0.2">
+                <h3>Boyd Shearer</h3>
+                <ul>
+                    
+                    <li class='fragment'>
+                        Assistant Director, Ky DGI <a href="https://kyfromabove.ky.gov/"
+                            target="_blank">🔗</a>
+                    </li>
+                    <li class='fragment'>
+                        outrageGIS mapping <a href="https://www.outragegis.com" target="_blank">🔗</a>
+                    </li>
+                    <li class='fragment'>
+                        former Senior Lecturer, UKy Geography <a href="https://geography.as.uky.edu/users/blshea1"
+                            target="_blank">🔗</a>
+                    </li> 
+                </ul>
+            </section>
+            <section data-background-image='./images/NLCD-orig.png' 
+            data-background-size="contain"
+                data-background-color="#aaa"data-background-opacity="1">
+                <h3 class="item-title-block fragment"><a href="https://ky.app.box.com/s/26f4o308m41jgs4a2pv2kvmy3fcesv98" target="_blank">Change</a></h3>
+            </section>
+
+            <section class="left" data-background-image='./images/background.jpg' data-background-opacity="0.2">
+                <blockquote>"When we try to pick out anything by itself, we find it hitched to everything else in the universe." <br>– John Muir, <em>My First Summer in the Sierra</em> </blockquote>
+                <!-- <span class="fragment"></span> -->
+            </section>
+
+            <section class="left" data-background-image='./images/ob-01.jpg' 
+            data-background-size="contain"
+                data-background-color="#777" data-background-opacity="1">
+            </section>
+
+            <section class="left" data-background-image='./images/ob-02.jpg' 
+            data-background-color="#777" data-background-opacity="1">
+                
+            </section>
+
+            <section class="left" data-background-image='./images/ob-03.jpg' 
+            data-background-color="#777" data-background-opacity="1">
+                
+            </section>
+
+            <section class="left" data-background-image='./images/ob-04.jpg' 
+                data-background-size="contain"
+                data-background-color="#777"
+                data-background-opacity="1">
+            </section>
+
+            <section class="left" data-background-image='./images/ob-05.jpg' 
+                data-background-size="contain"
+                data-background-color="#777"
+                data-background-opacity="1">
+            </section>
+
+            <section class="left" data-background-image='./images/ob-06-1.jpg' 
+                data-background-size="contain"
+                data-background-color="#fff"
+                data-background-opacity="1">
+            </section>
+
+            <!-- <section class="left" data-background-image='./images/ob-06.jpg' 
+                data-background-size="contain"
+                data-background-color="#fff"
+                data-background-opacity="1">
+            </section> -->
+
+            
+
+            <section class="left" data-background-image='./images/ob-07.jpg' 
+                data-background-size="contain"
+                data-background-color="#fff"
+                data-background-opacity="1">
+            </section>
+
+            <section data-background-image='./images/background.jpg' 
+            data-markdown data-separator="---" data-background-opacity="0.2">
+                <textarea data-template>
+                    ### Server response
+                    ```json
+                    "North": {
+                        "OBJECTID": 3247076,
+                        "Filename": "KY_KYAPED_2023_Season1_3IN/Fwd_6057_21757.tif",
+                        "FlightDate": 1679788800000,
+                        "FlightTime": "14:42:46",
+                        "TimeZone": "EDT (-4)",
+                        "FL": "6057",
+                        "ShotID": "Fwd_6057_21757",
+                        "CameraID": "Fwd",
+                        "Year": 2023,
+                        "Season": 1,
+                        "S3URL": "https://kyfromabove.s3.amazonaws.com/imagery/obliques/Phase3/KY_KYAPED_2023_Season1_3IN/Fwd_6057_21757.tif",
+                        "FlightDirection": "North",
+                        "CameraDirection": "North",
+                        "flight_date": "2023-03-26",
+                        "centroid_lat": 36.7518639493335,
+                        "centroid_lon": -83.7003609454546,
+                        "direction": "North",
+                        "distance_ft": 887,
+                        "distance_m": 270
+                        },
+                    "South": {
+                        "OBJECTID": 3261743,
+                        "Filename": "KY_KYAPED_2023_Season1_3IN/Bwd_6057_21773.tif",
+                        "FlightDate": 1679788800000,
+                        "FlightTime": "14:43:21",
+                        "TimeZone": "EDT (-4)",
+                        "FL": "6057",
+                        "ShotID": "Bwd_6057_21773",
+                        "CameraID": "Bwd",
+                        "Year": 2023,
+                        "Season": 1,
+                        "S3URL": "https://kyfromabove.s3.amazonaws.com/imagery/obliques/Phase3/KY_KYAPED_2023_Season1_3IN/Bwd_6057_21773.tif",
+                        "FlightDirection": "North",
+                        "CameraDirection": "South",
+                        "flight_date": "2023-03-26",
+                        "centroid_lat": 36.753475292872,
+                        "centroid_lon": -83.7006619717478,
+                        "direction": "South",
+                        "distance_ft": 761,
+                        "distance_m": 232
+                        },
+                    "East": {
+                        "OBJECTID": 3231576,
+                        "Filename": "KY_KYAPED_2023_Season1_3IN/Right_6055_20908.tif",
+                        "FlightDate": 1679788800000,
+                        "FlightTime": "14:01:43",
+                        "TimeZone": "EDT (-4)",
+                        "FL": "6055",
+                        "ShotID": "Right_6055_20908",
+                        "CameraID": "Right",
+                        "Year": 2023,
+                        "Season": 1,
+                        "S3URL": "https://kyfromabove.s3.amazonaws.com/imagery/obliques/Phase3/KY_KYAPED_2023_Season1_3IN/Right_6055_20908.tif",
+                        "FlightDirection": "North",
+                        "CameraDirection": "East",
+                        "flight_date": "2023-03-26",
+                        "centroid_lat": 36.7536144616033,
+                        "centroid_lon": -83.6972518314575,
+                        "direction": "East",
+                        "distance_ft": 243,
+                        "distance_m": 74
+                        },
+                    "West": {
+                        "OBJECTID": 3233964,
+                        "Filename": "KY_KYAPED_2023_Season1_3IN/Right_6060_23296.tif",
+                        "FlightDate": 1680048000000,
+                        "FlightTime": "11:01:29",
+                        "TimeZone": "EDT (-4)",
+                        "FL": "6060",
+                        "ShotID": "Right_6060_23296",
+                        "CameraID": "Right",
+                        "Year": 2023,
+                        "Season": 1,
+                        "S3URL": "https://kyfromabove.s3.amazonaws.com/imagery/obliques/Phase3/KY_KYAPED_2023_Season1_3IN/Right_6060_23296.tif",
+                        "FlightDirection": "South",
+                        "CameraDirection": "West",
+                        "flight_date": "2023-03-29",
+                        "centroid_lat": 36.75397723345,
+                        "centroid_lon": -83.6947749780617,
+                        "direction": "West",
+                        "distance_ft": 979,
+                        "distance_m": 298
+                    }
+                    ```
+                </textarea>
+            </section>
+            
+
+            <section class="left" data-background-image='./images/background.jpg' 
+            data-markdown data-separator="---" data-background-opacity="0.2">
+                <textarea data-template>
+                    ```python [1-2|4-5]
+                    https://services3.arcgis.com/ghsX9CKghMvyYjBU/ArcGIS/rest/services/phase_3_centroids_with_flight_camera_directions_gdb/FeatureServer/0
+                    https://kygisserver.ky.gov/arcgis/rest/services/Temp_Services/GetObliqueCentroids/GPServer/GetObliqueCentroids/execute?latitude=36.753450&longitude=-83.698059&search_radius_ft=5000&return_all=True&f=json
+                    ```
+                </textarea>
+            </section>
+
+            <section class="left" data-background-image='./images/background.jpg' 
+            data-markdown data-separator="---" data-background-opacity="0.2">
+                <textarea data-template>
+                    ```txt
+                    latitude=36.753450
+                    longitude=-83.698059
+                    search_radius_ft=5000
+                    return_all=True
+                    f=json
+                    ```
+			
+                </textarea>
+            </section>
+
+            <section class="left" data-background-image='./images/ob-08.jpg' 
+                data-background-size="contain"
+                data-background-color="#fff"
+                data-background-opacity="1">
+            </section>
+
+            <section class="left" data-background-image='./images/sample1.jpg' 
+                data-background-size="contain"
+                data-background-color="#333"
+                data-background-opacity="1">
+            </section>
+
+            <section class="left" data-background-image='./images/el-00.jpg' 
+                data-background-size="contain"
+                data-background-color="#777"
+                data-background-opacity="1">
+            </section>
+
+            <section class="left" data-background-image='./images/el-01.jpg' 
+                data-background-size="contain"
+                data-background-color="#777"
+                data-background-opacity="1">
+            </section>
+
+            <section class="left" data-background-image='./images/el-02.jpg' 
+                data-background-size="contain"
+                data-background-color="#777"
+                data-background-opacity="1">
+            </section>
+
+            <section class="left" data-background-image='./images/el-014.jpg' 
+                data-background-size="contain"
+                data-background-color="#E7E5DB"
+                data-background-opacity="1">
+            </section>
+
+            <section class="left" data-background-image='./images/el-03.jpg' 
+                data-background-size="contain"
+                data-background-color="#777"
+                data-background-opacity="1">
+            </section>
+
+            <section class="left" data-background-image='./images/el-04.jpg' 
+                data-background-size="contain"
+                data-background-color="#777"
+                data-background-opacity="1">
+            </section>
+
+            <section class="left" data-background-image='./images/el-04-5.jpg' 
+                data-background-size="contain"
+                data-background-color="#777"
+                data-background-opacity="1">
+            </section>
+
+            <section class="left" data-background-image='./images/el-05.jpg' 
+                data-background-size="contain"
+                data-background-color="#777"
+                data-background-opacity="1">
+            </section>
+
+            <section class="left" data-background-image='./images/el-06.jpg' 
+                data-background-size="contain"
+                data-background-color="#777"
+                data-background-opacity="1">
+            </section>
+
+            <section class="left" data-background-image='./images/el-07.jpg' 
+                data-background-size="contain"
+                data-background-color="#777"
+                data-background-opacity="1">
+            </section>
+
+            <section class="left" data-background-image='./images/el-08.jpg' 
+                data-background-size="contain"
+                data-background-color="#777"
+                data-background-opacity="1">
+            </section>
+
+            <section class="left" data-background-image='./images/el-09.jpg' 
+                data-background-size="contain"
+                data-background-color="#777"
+                data-background-opacity="1">
+            </section>
+
+            <section class="left" data-background-image='./images/el-10.jpg' 
+                data-background-size="contain"
+                data-background-color="#777"
+                data-background-opacity="1">
+            </section>
+
+            <section class="left" data-background-image='./images/background.jpg' 
+            data-markdown data-separator="---" data-background-opacity="0.2">
+                <textarea data-template>
+                    ```python [1-2|4-5]
+                    https://kygisserver.ky.gov/arcgis/rest/services/Temp_Services/LocateMaxMinRasterCell/GPServer/LocateMaxMinRasterCell/execute?bbox=-84.5,38.00,-84.49,38.01&f=json&raster=phase_2_dsm
+                    ```
+                </textarea>
+            </section>
+
+            <section class="left" data-background-image='./images/background.jpg' 
+            data-markdown data-separator="---" data-background-opacity="0.2">
+                <textarea data-template>
+                    ```txt
+                    bbox=-84.5,38.00,-84.49,38.01
+                    raster=phase_2_dsm
+                    height=False
+                    f=json
+                    ```
+                </textarea>
+            </section>
+
+             <section data-background-image='./images/background.jpg' 
+            data-markdown data-separator="---" data-background-opacity="0.2">
+                <textarea data-template>
+                    ### Server response
+                    ```json
+                    "type": "FeatureCollection",
+                    "features": [
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates": [-84.0285251005322, 38.0321870052834]
+                        },
+                        "properties": {
+                        "type": "max",
+                        "value": 1092.33251953125
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates": [-84.0158748843703, 38.0998459236238]
+                        },
+                        "properties": {
+                        "type": "min",
+                        "value": 856.380554199219
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Polygon",
+                        "coordinates": [
+                            [
+                            [-84.1, 38],
+                            [-84.1, 38.1],
+                            [-84, 38.1],
+                            [-84, 38],
+                            [-84.1, 38]
+                            ]
+                        ]
+                        },
+                        "properties": {
+                        "type": "bounding_box",
+                        "value": [-84.1, 38, -84, 38.1],
+                        "raster_type": "phase_1_dem",
+                        "surface": "https://kyraster.ky.gov/arcgis/rest/services/ElevationServices/Ky_DEM_KYAPED_5FT/ImageServer/exportImage?bbox=-84.1,38.0,-84.0,38.1&bboxSR=4326&size=1024%2C1024&imageSR=3089&time=&format=jpgpng&pixelType=UNKNOWN&interpolation=+RSP_BilinearInterpolation&renderingRule=%7B%0D%0A++%22rasterFunction%22%3A+%22Hillshade%22%2C%0D%0A++%22rasterFunctionArguments%22%3A+%7B%0D%0A%22HillshadeType%22%3A+0%2C%0D%0A++++%22ZFactor%22%3A+1.0%0D%0A++%7D%2C%0D%0A++%22variableName%22%3A+%22DEM%22%0D%0A%7D%0D%0A&adjustAspectRatio=true&validateExtent=false&lercVersion=1&compressionTolerance=&f=image"
+                        }
+                    }
+                    ```
+			
+                </textarea>
+            </section>
+
+            <section class="left" data-background-image='./images/sample2.jpg' 
+                data-background-size="contain"
+                data-background-color="#333"
+                data-background-opacity="1">
+            </section>
+
+            <section class="left" data-background-image='./images/el-20.jpg' 
+                data-background-size="contain"
+                data-background-color="#777"
+                data-background-opacity="1">
+            </section>
+
+            <section class="left" data-background-image='./images/el-21.jpg' 
+                data-background-size="contain"
+                data-background-color="#777"
+                data-background-opacity="1">
+            </section>
+
+            <section class="left" data-background-image='./images/lulc-ky.png' 
+                data-background-size="contain"
+                data-background-color="#fff"
+                data-background-opacity="1">
+            </section>
+
+            <section class="left" data-background-image='./images/lulc-slade.jpg' 
+                data-background-size="contain"
+                data-background-color="#A1B898"
+                data-background-opacity="1">
+            </section>
+
+            <section class="left" data-background-image='./images/lulc-zoomed.jpg' 
+                data-background-size="contain"
+                data-background-color="#A1B898"
+                data-background-opacity="1">
+            </section>
+
+            <section class="left" data-background-image='./images/lulc-attribute-01.png' 
+                data-background-size="contain"
+                data-background-color="#fff"
+                data-background-opacity="1">
+            </section>
+
+            <section class="left" data-background-image='./images/lulc-attribute-02.png' 
+                data-background-size="contain"
+                data-background-color="#fff"
+                data-background-opacity="1">
+            </section>
+
+            <section class="left" data-background-image='./images/lu-010.png' 
+                data-background-size="contain"
+                data-background-color="#fff"
+                data-background-opacity="1">
+            </section>
+
+            <section class="left" data-background-image='./images/lu-011.png' 
+                data-background-size="contain"
+                data-background-color="#fff"
+                data-background-opacity="1">
+            </section>
+
+            <section class="left" data-background-image='./images/lu-012.png' 
+                data-background-size="contain"
+                data-background-color="#fff"
+                data-background-opacity="1">
+            </section>
+
+            <section class="left" data-background-image='./images/background.jpg' 
+            data-markdown data-separator="---" data-background-opacity="0.2">
+                <textarea data-template>
+                    ```python 
+                    https://kygisserver.ky.gov/arcgis/rest/services/GeoprocessingServices/LandCoverChange/GPServer/LandCoverChange/execute?start_year=1985&end_year=2024&bbox=-84.5,38,-84,38.5&f=json
+                    ```
+                </textarea>
+            </section>
+
+            
+
+            <section class="left" data-background-image='./images/background.jpg' 
+            data-markdown data-separator="---" data-background-opacity="0.2">
+                <textarea data-template>
+                    ```txt
+                    start_year=1985
+                    end_year=2024
+                    bbox=-84.5,38,-84,38.5
+                    f=json
+                    ```
+                </textarea>
+            </section>
+
+            <section data-background-image='./images/background.jpg' 
+            data-markdown data-separator="---" data-background-opacity="0.2">
+                <textarea data-template>
+                    ### Server response
+                    ```json
+                    "start_year": 1985,
+                    "end_year": 2024,
+                    "bbox": {
+                        "xmin": -84.49999999999994,
+                        "ymin": 38.00000000000006,
+                        "xmax": -83.99999999999994,
+                        "ymax": 38.50000000000006,
+                        "wkid": 4326
+                    },
+                    "classes": [
+                        {
+                        "value": 11,
+                        "class": "Open Water",
+                        "start_sqmi": 2.125,
+                        "end_sqmi": 3.104,
+                        "change_sqmi": 0.979,
+                        "pct_change": 46.07
+                        },
+                        {
+                        "value": 21,
+                        "class": "Developed, Open Space",
+                        "start_sqmi": 42.354,
+                        "end_sqmi": 51.443,
+                        "change_sqmi": 9.089,
+                        "pct_change": 21.46
+                        },
+                        {
+                        "value": 22,
+                        "class": "Developed, Low Intensity",
+                        "start_sqmi": 21.5,
+                        "end_sqmi": 26.99,
+                        "change_sqmi": 5.49,
+                        "pct_change": 25.53
+                        },
+                        {
+                        "value": 23,
+                        "class": "Developed, Medium Intensity",
+                        "start_sqmi": 8.995,
+                        "end_sqmi": 15.277,
+                        "change_sqmi": 6.282,
+                        "pct_change": 69.84
+                        },
+                        {
+                        "value": 24,
+                        "class": "Developed, High Intensity",
+                        "start_sqmi": 3.033,
+                        "end_sqmi": 4.793,
+                        "change_sqmi": 1.76,
+                        "pct_change": 58.03
+                        },
+                        {
+                        "value": 31,
+                        "class": "Barren Land (Rock/Sand/Clay)",
+                        "start_sqmi": 0.191,
+                        "end_sqmi": 0.29,
+                        "change_sqmi": 0.099,
+                        "pct_change": 51.83
+                        },
+                        {
+                        "value": 41,
+                        "class": "Deciduous Forest",
+                        "start_sqmi": 124.225,
+                        "end_sqmi": 120.54,
+                        "change_sqmi": -3.685,
+                        "pct_change": -2.97
+                        },
+                        {
+                        "value": 42,
+                        "class": "Evergreen Forest",
+                        "start_sqmi": 5.261,
+                        "end_sqmi": 4.271,
+                        "change_sqmi": -0.99,
+                        "pct_change": -18.82
+                        },
+                        {
+                        "value": 43,
+                        "class": "Mixed Forest",
+                        "start_sqmi": 29.674,
+                        "end_sqmi": 30.023,
+                        "change_sqmi": 0.349,
+                        "pct_change": 1.18
+                        },
+                        {
+                        "value": 52,
+                        "class": "Shrub/Scrub",
+                        "start_sqmi": 0.0,
+                        "end_sqmi": 0.095,
+                        "change_sqmi": 0.095,
+                        "pct_change": 0.0
+                        },
+                        {
+                        "value": 71,
+                        "class": "Grassland/Herbaceous",
+                        "start_sqmi": 0.112,
+                        "end_sqmi": 0.522,
+                        "change_sqmi": 0.41,
+                        "pct_change": 366.07
+                        },
+                        {
+                        "value": 81,
+                        "class": "Pasture/Hay",
+                        "start_sqmi": 668.115,
+                        "end_sqmi": 638.004,
+                        "change_sqmi": -30.111,
+                        "pct_change": -4.51
+                        },
+                        {
+                        "value": 82,
+                        "class": "Cultivated Crops",
+                        "start_sqmi": 31.581,
+                        "end_sqmi": 41.896,
+                        "change_sqmi": 10.315,
+                        "pct_change": 32.66
+                        },
+                        {
+                        "value": 90,
+                        "class": "Woody Wetlands",
+                        "start_sqmi": 0.075,
+                        "end_sqmi": 0.067,
+                        "change_sqmi": -0.008,
+                        "pct_change": -10.67
+                        },
+                        {
+                        "value": 95,
+                        "class": "Emergent Herbaceous Wetlands",
+                        "start_sqmi": 0.438,
+                        "end_sqmi": 0.366,
+                        "change_sqmi": -0.072,
+                        "pct_change": -16.44
+                        }
+                    ]
+                    ```
+                </textarea>
+            </section>
+
+            <section class="left" data-background-image='./images/sample3.jpg' 
+                data-background-size="contain"
+                data-background-color="#333"
+                data-background-opacity="1">
+            </section>
+
+            
+
+            <section class="left" data-background-image='./images/background.jpg' data-background-opacity="0.2">
+                <h3 class="r-fit">Agenda</h3>
+                <ul>
+                    <li class="fragment">What is Land Cover?</li>
+                    <li class="fragment">Where can I get it?</li>
+                    <li class="fragment">How can I use it?</li>
+                </ul>
+            </section>
+
+           
+            <section data-background-opacity="1" data-background-size="contain"
+                data-background-iframe='https://kygeonet.ky.gov/LandcoverExplorer/'>
+            </section>
+
+            <section data-pre-load data-background-image='./images/background.jpg' data-background-opacity="0.4">
+                <h3>Thank you!</h3>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://uky-gis.github.io/geo509/slides/dist/reveal.js"></script>
+    <script src="https://uky-gis.github.io/geo509/slides/dist/plugin/notes/notes.js"></script>
+    <script src="https://uky-gis.github.io/geo509/slides/dist/plugin/markdown/markdown.js"></script>
+    <script src="https://uky-gis.github.io/geo509/slides/dist/plugin/highlight/highlight.js"></script>
+    <script>
+        // More info about initialization & config:
+        // - https://revealjs.com/initialization/
+        // - https://revealjs.com/config/
+        Reveal.initialize({
+            hash: true,
+            backgroundTransition: "fade",
+            // Transition style
+            transition: "fade", // none/fade/slide/convex/concave/zoom
+
+            // Transition speed
+            transitionSpeed: "fast", // default/fast/slow
+
+            // Learn about plugins: https://revealjs.com/plugins/
+            plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+        });
+    </script>
+</body>
+
+</html>
