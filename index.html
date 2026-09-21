@@ -61,15 +61,31 @@
                     </li> 
                 </ul>
             </section>
-            <section data-background-image='./images/NLCD-orig.png' 
-            data-background-size="contain"
-                data-background-color="#aaa"data-background-opacity="1">
-                <h3 class="item-title-block fragment"><a href="https://ky.app.box.com/s/26f4o308m41jgs4a2pv2kvmy3fcesv98" target="_blank">Change</a></h3>
-            </section>
 
             <section class="left" data-background-image='./images/background.jpg' data-background-opacity="0.2">
-                <blockquote>"When we try to pick out anything by itself, we find it hitched to everything else in the universe." <br>– John Muir, <em>My First Summer in the Sierra</em> </blockquote>
+                <blockquote>"I can't say as ever I was lost, but I was bewildered once for three days." <br>– Daniel Boone </blockquote>
                 <!-- <span class="fragment"></span> -->
+            </section>
+
+            <section class="left" data-background-image='./images/blue-dot.png' 
+            data-background-size="contain"
+                data-background-color="#ababab" data-background-opacity="1">
+            </section>
+
+
+            <section class="left" data-background-image='./images/background.jpg' data-background-opacity="0.2"
+                data-background-color="#333">
+                <h3 class="">KyFromAbove Explorers</h3>
+                <ul>
+                    <li class='fragment'>
+                        Obliques <span class="fragment" >– what's my closet imagery?</span>
+                    </li>
+                    <li class='fragment'>
+                        Elevation <span class="fragment" >– what's my highest point?</span>
+                    </li>
+                    <li class='fragment'>
+                        Land cover <span class="fragment" >– how has my landscape changed?</span>
+                    </li>
             </section>
 
             <section class="left" data-background-image='./images/ob-01.jpg' 
@@ -117,6 +133,32 @@
                 data-background-size="contain"
                 data-background-color="#fff"
                 data-background-opacity="1">
+            </section>
+
+            
+            
+
+            <!-- <section class="left" data-background-image='./images/background.jpg' 
+            data-markdown data-separator="---" data-background-opacity="0.2">
+                <textarea data-template>
+                    ```python [1-2|4-5]
+                    https://services3.arcgis.com/ghsX9CKghMvyYjBU/ArcGIS/rest/services/phase_3_centroids_with_flight_camera_directions_gdb/FeatureServer/0
+                    https://kygisserver.ky.gov/arcgis/rest/services/Temp_Services/GetObliqueCentroids/GPServer/GetObliqueCentroids/execute?latitude=36.753450&longitude=-83.698059&search_radius_ft=1000&return_all=True&f=json
+                    ```
+                </textarea>
+            </section> -->
+
+            <section class="left" data-background-image='./images/background.jpg' 
+            data-markdown data-separator="---" data-background-opacity="0.2">
+                <textarea data-template>
+                    ```py
+                    latitude=36.753450
+                    longitude=-83.698059
+                    search_radius_ft=1000 # optional
+                    return_all=False # optional
+                    f=json
+                    ```
+                </textarea>
             </section>
 
             <section data-background-image='./images/background.jpg' 
@@ -211,30 +253,22 @@
                     ```
                 </textarea>
             </section>
-            
 
-            <section class="left" data-background-image='./images/background.jpg' 
-            data-markdown data-separator="---" data-background-opacity="0.2">
-                <textarea data-template>
-                    ```python [1-2|4-5]
-                    https://services3.arcgis.com/ghsX9CKghMvyYjBU/ArcGIS/rest/services/phase_3_centroids_with_flight_camera_directions_gdb/FeatureServer/0
-                    https://kygisserver.ky.gov/arcgis/rest/services/Temp_Services/GetObliqueCentroids/GPServer/GetObliqueCentroids/execute?latitude=36.753450&longitude=-83.698059&search_radius_ft=5000&return_all=True&f=json
-                    ```
-                </textarea>
-            </section>
-
-            <section class="left" data-background-image='./images/background.jpg' 
-            data-markdown data-separator="---" data-background-opacity="0.2">
-                <textarea data-template>
-                    ```txt
-                    latitude=36.753450
-                    longitude=-83.698059
-                    search_radius_ft=5000
-                    return_all=True
-                    f=json
-                    ```
-			
-                </textarea>
+            <section class='left' data-background-image="images/background.jpg" data-background-opacity="0.2">
+                <h3>Examples</h3>
+                <ul>
+                    
+                    <li class='fragment'>
+                        Service is still in testing. <a href="https://kygisserver.ky.gov/arcgis/rest/services/Temp_Services/GetObliqueCentroids/GPServer/GetObliqueCentroids" target="_blank">🔗</a>
+                    </li>
+                    <li class='fragment'>
+                        Get closet to the GIS Conference. <a href="https://kygisserver.ky.gov/arcgis/rest/services/Temp_Services/GetObliqueCentroids/GPServer/GetObliqueCentroids/execute?latitude=38.034586927&longitude=-84.52492237&f=json"
+                            target="_blank">🔗</a>
+                    </li> 
+                    <li class='fragment'>
+                        Get all obliques within a 1,000 feet of a location. <a href="https://kygisserver.ky.gov/arcgis/rest/services/Temp_Services/GetObliqueCentroids/GPServer/GetObliqueCentroids/execute?latitude=36.753450&longitude=-83.698059&search_radius_ft=1000&return_all=True&f=json" target="_blank">🔗</a>
+                    </li>
+                </ul>
             </section>
 
             <section class="left" data-background-image='./images/ob-08.jpg' 
@@ -247,6 +281,19 @@
                 data-background-size="contain"
                 data-background-color="#333"
                 data-background-opacity="1">
+            </section>
+
+            <section class='left' data-background-image="images/background.jpg" data-background-opacity="0.2">
+                <h3>Sites using endpoint</h3>
+                <ul>
+                    
+                    <li class='fragment'>
+                        Catalog Explorer <a href="https://kygeonet.ky.gov/CatalogExplorer" target="_blank">🔗</a>
+                    </li>
+                    <li class='fragment'>
+                        Oblique Explorer <a href="https://kygislicserv.ky.gov/mini-apps/oblique-service/" target="_blank">🔗</a>
+                    </li> 
+                </ul>
             </section>
 
             <section class="left" data-background-image='./images/el-00.jpg' 
@@ -327,28 +374,24 @@
                 data-background-opacity="1">
             </section>
 
-            <section class="left" data-background-image='./images/background.jpg' 
-            data-markdown data-separator="---" data-background-opacity="0.2">
-                <textarea data-template>
-                    ```python [1-2|4-5]
-                    https://kygisserver.ky.gov/arcgis/rest/services/Temp_Services/LocateMaxMinRasterCell/GPServer/LocateMaxMinRasterCell/execute?bbox=-84.5,38.00,-84.49,38.01&f=json&raster=phase_2_dsm
-                    ```
-                </textarea>
-            </section>
+            
+
+            
 
             <section class="left" data-background-image='./images/background.jpg' 
             data-markdown data-separator="---" data-background-opacity="0.2">
                 <textarea data-template>
-                    ```txt
+                    ```py
                     bbox=-84.5,38.00,-84.49,38.01
-                    raster=phase_2_dsm
-                    height=False
+                    raster=phase_1_dem
+                    # phase_1_dem, phase_2_dem, phase_1_dsm, phase_2_dsm
+                    return_height=False # optional, default False
                     f=json
                     ```
                 </textarea>
             </section>
 
-             <section data-background-image='./images/background.jpg' 
+            <section data-background-image='./images/background.jpg' 
             data-markdown data-separator="---" data-background-opacity="0.2">
                 <textarea data-template>
                     ### Server response
@@ -403,10 +446,38 @@
                 </textarea>
             </section>
 
+            <section class='left' data-background-image="images/background.jpg" data-background-opacity="0.2">
+                <h3>Examples</h3>
+                <ul>
+                    <li class='fragment'>
+                        Service is still in testing. <a href="https://kygisserver.ky.gov/arcgis/rest/services/Temp_Services/LocateMaxMinRasterCell/GPServer/LocateMaxMinRasterCell" target="_blank">🔗</a>
+                    </li>
+                    <li class='fragment'>
+                        Works directly with source rasters and for areas < 5 sq mi.
+                    </li>
+                    <li class='fragment'>
+                        Max height at GIS Conference building <a href="https://kygisserver.ky.gov/arcgis/rest/services/Temp_Services/LocateMaxMinRasterCell/GPServer/LocateMaxMinRasterCell/execute?bbox=-84.5255,38.0345,-84.5247,38.0351&raster=phase_2_dsm&return_height=True&f=json"
+                            target="_blank">🔗</a>
+                    </li> 
+                </ul>
+            </section>
+
             <section class="left" data-background-image='./images/sample2.jpg' 
                 data-background-size="contain"
                 data-background-color="#333"
                 data-background-opacity="1">
+            </section>
+
+            
+
+            <section class='left' data-background-image="images/background.jpg" data-background-opacity="0.2">
+                <h3>Sites using endpoint</h3>
+                <ul>
+                    
+                    <li class='fragment'>
+                        Elevation Explorer <a href="https://kygeonet.ky.gov/ElevationExplorer" target="_blank">🔗</a>
+                    </li>
+                </ul>
             </section>
 
             <section class="left" data-background-image='./images/el-20.jpg' 
@@ -473,7 +544,7 @@
             data-markdown data-separator="---" data-background-opacity="0.2">
                 <textarea data-template>
                     ```python 
-                    https://kygisserver.ky.gov/arcgis/rest/services/GeoprocessingServices/LandCoverChange/GPServer/LandCoverChange/execute?start_year=1985&end_year=2024&bbox=-84.5,38,-84,38.5&f=json
+                    https://kygisserver.ky.gov/arcgis/rest/services/GeoprocessingServices/LandCoverChange/GPServer/LandCoverChange/execute?start_year=1985&end_year=2024&bbox=-89.70443,36.456976,-81.884235,39.151921&f=json
                     ```
                 </textarea>
             </section>
@@ -483,10 +554,12 @@
             <section class="left" data-background-image='./images/background.jpg' 
             data-markdown data-separator="---" data-background-opacity="0.2">
                 <textarea data-template>
-                    ```txt
-                    start_year=1985
-                    end_year=2024
+                    ```py
+                    start_year=1985 # 1985-2023
+                    end_year=2024 # 1986-2024
                     bbox=-84.5,38,-84,38.5
+                    # State bbox 
+                    #-89.70443,36.456976,-81.884235,39.151921
                     f=json
                     ```
                 </textarea>
@@ -632,23 +705,39 @@
                 </textarea>
             </section>
 
+            <section class='left' data-background-image="images/background.jpg" data-background-opacity="0.2">
+                <h3>Examples</h3>
+                <ul>
+                    <li class='fragment'>
+                        Service is stable. <a href="https://kygisserver.ky.gov/arcgis/rest/services/Temp_Services/LocateMaxMinRasterCell/GPServer/LocateMaxMinRasterCell" target="_blank">🔗</a>
+                    </li>
+                    <li class='fragment'>
+                        Works within state.
+                    </li>
+                    <li class='fragment'>
+                        Change between 1985 and 2024, Bowling Green <a href="https://kygisserver.ky.gov/arcgis/rest/services/GeoprocessingServices/LandCoverChange/GPServer/LandCoverChange/execute?start_year=1985&end_year=2024&bbox=-86.687,36.816,-86.169,37.085&f=json"
+                            target="_blank">🔗</a>
+                    </li> 
+                </ul>
+            </section>
+
             <section class="left" data-background-image='./images/sample3.jpg' 
                 data-background-size="contain"
                 data-background-color="#333"
                 data-background-opacity="1">
             </section>
 
-            
-
-            <section class="left" data-background-image='./images/background.jpg' data-background-opacity="0.2">
-                <h3 class="r-fit">Agenda</h3>
-                <ul>
-                    <li class="fragment">What is Land Cover?</li>
-                    <li class="fragment">Where can I get it?</li>
-                    <li class="fragment">How can I use it?</li>
-                </ul>
+            <section data-background-opacity="1" data-background-size="contain"
+                data-background-iframe='https://kygeonet.ky.gov/CatalogExplorer/'>
             </section>
 
+            <section data-background-opacity="1" data-background-size="contain"
+                data-background-iframe='https://kygislicserv.ky.gov/mini-apps/oblique-service/'>
+            </section>
+            
+            <section data-background-opacity="1" data-background-size="contain"
+                data-background-iframe='https://kygeonet.ky.gov/ElevationExplorer/'>
+            </section>
            
             <section data-background-opacity="1" data-background-size="contain"
                 data-background-iframe='https://kygeonet.ky.gov/LandcoverExplorer/'>
