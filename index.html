@@ -72,13 +72,38 @@
                 data-background-color="#ababab" data-background-opacity="1">
             </section>
 
+            <section data-markdown data-background-image='./images/background.jpg'
+            data-background-opacity="0.2">
+                <textarea data-template>
+                    ### Cellular service
+                    | Generation | Mbps | Common area |
+                    | -------- | -------- | -------- |
+                    | 4G    | 10–50    | Rural    |
+                    | 5G    | 30–150    | City    |
+                    | 5G +/UW    | 150-800    | High-density    |
+                </textarea>
+            </section>
+
+            <section data-markdown data-background-image='./images/background.jpg'
+            data-background-opacity="0.2">
+                <textarea data-template>
+                    ### Leverage the cloud
+                    ---
+                    ### send a string
+                    ---
+                    ### get a derived product.
+                    ---
+                    ### No software or license needed.
+                </textarea>
+            </section>
+
 
             <section class="left" data-background-image='./images/background.jpg' data-background-opacity="0.2"
                 data-background-color="#333">
                 <h3 class="">KyFromAbove Explorers</h3>
                 <ul>
                     <li class='fragment'>
-                        Obliques <span class="fragment" >– what's my closet imagery?</span>
+                        Obliques <span class="fragment" >– what's my closest imagery?</span>
                     </li>
                     <li class='fragment'>
                         Elevation <span class="fragment" >– what's my highest point?</span>
@@ -86,6 +111,23 @@
                     <li class='fragment'>
                         Land cover <span class="fragment" >– how has my landscape changed?</span>
                     </li>
+                </ul>
+            </section>
+            <section data-markdown data-background-image='./images/background.jpg'
+            data-background-opacity="0.2">
+                <textarea data-template>
+                    ### Each Explorer leverages a REST endpoint 
+                    ---
+                    ### on KyGISServer.ky.gov 
+                    ---
+                    ### using custom URL parameters.
+                </textarea>
+            </section>
+
+            <section data-background-image='./images/background.jpg' data-background-opacity="0.2"
+                data-background-color="#333">
+                <h2 class="">Oblique Explorer</h2>
+                <h3 class="fragment">What's my closest imagery?</h3>
             </section>
 
             <section class="left" data-background-image='./images/ob-01.jpg' 
@@ -115,11 +157,29 @@
                 data-background-opacity="1">
             </section>
 
+            <section class="left" data-background-image='./images/background.jpg' data-background-opacity="0.2"
+                data-background-color="#333">
+                <h3 class="">How it works</h3>
+                <ul>
+                    <li class='fragment'>
+                        AGOL Feature with 4.4 million centroids with directional information 
+                    </li>
+                    <li class='fragment'>
+                        for all trapezoid footprints of oblique images.
+                    </li>
+                    <li class='fragment'>
+                        Find the nearest N, E, S, W images to a point and return the properties for each.
+                    </li>
+                </ul>
+            </section>
+
             <section class="left" data-background-image='./images/ob-06-1.jpg' 
                 data-background-size="contain"
                 data-background-color="#fff"
                 data-background-opacity="1">
             </section>
+
+            
 
             <!-- <section class="left" data-background-image='./images/ob-06.jpg' 
                 data-background-size="contain"
@@ -127,6 +187,19 @@
                 data-background-opacity="1">
             </section> -->
 
+             <section data-background-image='./images/background.jpg' 
+            data-markdown data-separator="---" data-background-opacity="0.2">
+                <textarea data-template>
+                    #### Send this in a URL string...
+                    ```py
+                    latitude=36.753450
+                    longitude=-83.698059
+                    search_radius_ft=1000 # optional
+                    return_all=False # optional
+                    f=json
+                    ```
+                </textarea>
+            </section>
             
 
             <section class="left" data-background-image='./images/ob-07.jpg' 
@@ -138,33 +211,26 @@
             
             
 
-            <!-- <section class="left" data-background-image='./images/background.jpg' 
-            data-markdown data-separator="---" data-background-opacity="0.2">
-                <textarea data-template>
-                    ```python [1-2|4-5]
-                    https://services3.arcgis.com/ghsX9CKghMvyYjBU/ArcGIS/rest/services/phase_3_centroids_with_flight_camera_directions_gdb/FeatureServer/0
-                    https://kygisserver.ky.gov/arcgis/rest/services/Temp_Services/GetObliqueCentroids/GPServer/GetObliqueCentroids/execute?latitude=36.753450&longitude=-83.698059&search_radius_ft=1000&return_all=True&f=json
-                    ```
-                </textarea>
-            </section> -->
-
             <section class="left" data-background-image='./images/background.jpg' 
             data-markdown data-separator="---" data-background-opacity="0.2">
                 <textarea data-template>
-                    ```py
-                    latitude=36.753450
-                    longitude=-83.698059
-                    search_radius_ft=1000 # optional
-                    return_all=False # optional
-                    f=json
+                    #### URLs for REST endpoint
+                    ```python [1-2|3-5]
+                    # Centroid layer
+                    https://services3.arcgis.com/ghsX9CKghMvyYjBU/ArcGIS/rest/services/phase_3_centroids_with_flight_camera_directions_gdb/FeatureServer/0
+
+                    # GP REST endpoint
+                    https://kygisserver.ky.gov/arcgis/rest/services/Temp_Services/GetObliqueCentroids/GPServer/GetObliqueCentroids/execute?latitude=38.034586927&longitude=-84.52492237&f=json
                     ```
                 </textarea>
             </section>
 
+           
+
             <section data-background-image='./images/background.jpg' 
             data-markdown data-separator="---" data-background-opacity="0.2">
                 <textarea data-template>
-                    ### Server response
+                    #### Server response
                     ```json
                     "North": {
                         "OBJECTID": 3247076,
@@ -254,6 +320,8 @@
                 </textarea>
             </section>
 
+           
+
             <section class='left' data-background-image="images/background.jpg" data-background-opacity="0.2">
                 <h3>Examples</h3>
                 <ul>
@@ -268,6 +336,22 @@
                     <li class='fragment'>
                         Get all obliques within a 1,000 feet of a location. <a href="https://kygisserver.ky.gov/arcgis/rest/services/Temp_Services/GetObliqueCentroids/GPServer/GetObliqueCentroids/execute?latitude=36.753450&longitude=-83.698059&search_radius_ft=1000&return_all=True&f=json" target="_blank">🔗</a>
                     </li>
+                    <li class="fragment">
+                        Four-way view of Campbell House <a href="https://kygislicserv.ky.gov/mini-apps/oblique-service/four-way.html?lat=38.034836&lon=-84.524775&n=oblique_viewer.html%3Furl%3Dhttps%253A%252F%252Fkyfromabove.s3.amazonaws.com%252Fimagery%252Fobliques%252FPhase3%252FKY_KYAPED_2024_Season1_3IN%252FFwd_7207_3455.tif%26direction%3DNorth%26shot_id%3DFwd_7207_3455%26camera_dir%3DNorth%26flight_dir%3DNorth%26flight_date%3D2024-02-13%26distance_ft%3D370%26distance_m%3D113%26season%3D1%26year%3D2024%26flight_time%3D11%253A01%253A28%26timezone%3DEST%2B%2528-5%2529%26camera_id%3DFwd%26fl%3D7207%26px%3D7879%26py%3D3496%26sc%3D2&s=oblique_viewer.html%3Furl%3Dhttps%253A%252F%252Fkyfromabove.s3.amazonaws.com%252Fimagery%252Fobliques%252FPhase3%252FKY_KYAPED_2024_Season1_3IN%252FBwd_7207_3468.tif%26direction%3DSouth%26shot_id%3DBwd_7207_3468%26camera_dir%3DSouth%26flight_dir%3DNorth%26flight_date%3D2024-02-13%26distance_ft%3D232%26distance_m%3D71%26season%3D1%26year%3D2024%26flight_time%3D11%253A02%253A13%26timezone%3DEST%2B%2528-5%2529%26camera_id%3DBwd%26fl%3D7207%26px%3D5719%26py%3D3030%26sc%3D2&e=oblique_viewer.html%3Furl%3Dhttps%253A%252F%252Fkyfromabove.s3.amazonaws.com%252Fimagery%252Fobliques%252FPhase3%252FKY_KYAPED_2024_Season1_3IN%252FRight_7205_3872.tif%26direction%3DEast%26shot_id%3DRight_7205_3872%26camera_dir%3DEast%26flight_dir%3DNorth%26flight_date%3D2024-02-13%26distance_ft%3D677%26distance_m%3D206%26season%3D1%26year%3D2024%26flight_time%3D11%253A27%253A52%26timezone%3DEST%2B%2528-5%2529%26camera_id%3DRight%26fl%3D7205%26px%3D6813%26py%3D2899%26sc%3D2&w=oblique_viewer.html%3Furl%3Dhttps%253A%252F%252Fkyfromabove.s3.amazonaws.com%252Fimagery%252Fobliques%252FPhase3%252FKY_KYAPED_2024_Season1_3IN%252FLeft_7209_3064.tif%26direction%3DWest%26shot_id%3DLeft_7209_3064%26camera_dir%3DWest%26flight_dir%3DNorth%26flight_date%3D2024-02-07%26distance_ft%3D258%26distance_m%3D79%26season%3D1%26year%3D2024%26flight_time%3D12%253A45%253A04%26timezone%3DEST%2B%2528-5%2529%26camera_id%3DLeft%26fl%3D7209%26px%3D3574%26py%3D4800%26sc%3D2" target="_blank">🔗</a>
+                    </li>
+                </ul>
+            </section>
+
+             <section class='left' data-background-image="images/background.jpg" data-background-opacity="0.2">
+                <h3>Sites using endpoint</h3>
+                <ul>
+                    
+                    <li class='fragment'>
+                        Catalog Explorer <a href="https://kygeonet.ky.gov/CatalogExplorer" target="_blank">🔗</a>
+                    </li>
+                    <li class='fragment'>
+                        Oblique Explorer <a href="https://kygislicserv.ky.gov/mini-apps/oblique-service/" target="_blank">🔗</a>
+                    </li> 
                 </ul>
             </section>
 
@@ -283,18 +367,13 @@
                 data-background-opacity="1">
             </section>
 
-            <section class='left' data-background-image="images/background.jpg" data-background-opacity="0.2">
-                <h3>Sites using endpoint</h3>
-                <ul>
-                    
-                    <li class='fragment'>
-                        Catalog Explorer <a href="https://kygeonet.ky.gov/CatalogExplorer" target="_blank">🔗</a>
-                    </li>
-                    <li class='fragment'>
-                        Oblique Explorer <a href="https://kygislicserv.ky.gov/mini-apps/oblique-service/" target="_blank">🔗</a>
-                    </li> 
-                </ul>
+            <section data-background-image='./images/background.jpg' data-background-opacity="0.2"
+                data-background-color="#333">
+                <h2 class="">Elevation Explorer</h2>
+                <h3 class="fragment">What's my highest point?</h3>
             </section>
+
+            
 
             <section class="left" data-background-image='./images/el-00.jpg' 
                 data-background-size="contain"
@@ -314,10 +393,26 @@
                 data-background-opacity="1">
             </section>
 
+             <section data-markdown data-background-image='./images/background.jpg'
+            data-background-opacity="0.2">
+                <textarea data-template>
+                    ### Every 5k grid cell has a highest and lowest spot elevation
+                    ---
+                    ### Sort by elevation and return the highest and lowest points.
+                </textarea>
+            </section>
+
             <section class="left" data-background-image='./images/el-014.jpg' 
                 data-background-size="contain"
                 data-background-color="#E7E5DB"
                 data-background-opacity="1">
+            </section>
+
+            <section data-markdown data-background-image='./images/background.jpg'
+            data-background-opacity="0.2">
+                <textarea data-template>
+                    ### Zoom in...
+                </textarea>
             </section>
 
             <section class="left" data-background-image='./images/el-03.jpg' 
@@ -336,6 +431,15 @@
                 data-background-size="contain"
                 data-background-color="#777"
                 data-background-opacity="1">
+            </section>
+
+            <section data-markdown data-background-image='./images/background.jpg'
+            data-background-opacity="0.2">
+                <textarea data-template>
+                    ### Zoom in further...
+                    ---
+                    ### Look at each raster cell and return the highest and lowest cell value.
+                </textarea>
             </section>
 
             <section class="left" data-background-image='./images/el-05.jpg' 
@@ -362,11 +466,24 @@
                 data-background-opacity="1">
             </section>
 
+            <section data-markdown data-background-image='./images/background.jpg'
+            data-background-opacity="0.2">
+                <textarea data-template>
+                    ### Raster Cell Iterator 
+                    ---
+                    ### can iterate over multiple rasters
+                    ---
+                    ### DSM - DEM for height above ground.
+                </textarea>
+            </section>
+
             <section class="left" data-background-image='./images/el-09.jpg' 
                 data-background-size="contain"
                 data-background-color="#777"
                 data-background-opacity="1">
             </section>
+
+             
 
             <section class="left" data-background-image='./images/el-10.jpg' 
                 data-background-size="contain"
@@ -374,13 +491,10 @@
                 data-background-opacity="1">
             </section>
 
-            
-
-            
-
             <section class="left" data-background-image='./images/background.jpg' 
             data-markdown data-separator="---" data-background-opacity="0.2">
                 <textarea data-template>
+                    #### Send this in a URL string...
                     ```py
                     bbox=-84.5,38.00,-84.49,38.01
                     raster=phase_1_dem
@@ -391,10 +505,24 @@
                 </textarea>
             </section>
 
+            <section class="left" data-background-image='./images/background.jpg' 
+            data-markdown data-separator="---" data-background-opacity="0.2">
+                <textarea data-template>
+                    #### URLs for REST endpoint
+                    ```python [1-2|3-5]
+                    # Spot elevation layer
+                    https://services3.arcgis.com/ghsX9CKghMvyYjBU/ArcGIS/rest/services/ky_spot_elevations_hi_lo_phase2_by_5k_grid/FeatureServer/0
+
+                    # GP REST endpoint
+                    https://kygisserver.ky.gov/arcgis/rest/services/Temp_Services/LocateMaxMinRasterCell/GPServer/LocateMaxMinRasterCell/execute?bbox=-84.5,38.00,-84.49,38.01&raster=phase_2_dsm&return_height=True&f=json
+                    ```
+                </textarea>
+            </section>
+
             <section data-background-image='./images/background.jpg' 
             data-markdown data-separator="---" data-background-opacity="0.2">
                 <textarea data-template>
-                    ### Server response
+                    #### Server response
                     ```json
                     "type": "FeatureCollection",
                     "features": [
@@ -446,6 +574,7 @@
                 </textarea>
             </section>
 
+
             <section class='left' data-background-image="images/background.jpg" data-background-opacity="0.2">
                 <h3>Examples</h3>
                 <ul>
@@ -453,7 +582,7 @@
                         Service is still in testing. <a href="https://kygisserver.ky.gov/arcgis/rest/services/Temp_Services/LocateMaxMinRasterCell/GPServer/LocateMaxMinRasterCell" target="_blank">🔗</a>
                     </li>
                     <li class='fragment'>
-                        Works directly with source rasters and for areas < 5 sq mi.
+                        Works directly with source rasters for areas < 5 sq mi.
                     </li>
                     <li class='fragment'>
                         Max height at GIS Conference building <a href="https://kygisserver.ky.gov/arcgis/rest/services/Temp_Services/LocateMaxMinRasterCell/GPServer/LocateMaxMinRasterCell/execute?bbox=-84.5255,38.0345,-84.5247,38.0351&raster=phase_2_dsm&return_height=True&f=json"
@@ -461,14 +590,6 @@
                     </li> 
                 </ul>
             </section>
-
-            <section class="left" data-background-image='./images/sample2.jpg' 
-                data-background-size="contain"
-                data-background-color="#333"
-                data-background-opacity="1">
-            </section>
-
-            
 
             <section class='left' data-background-image="images/background.jpg" data-background-opacity="0.2">
                 <h3>Sites using endpoint</h3>
@@ -480,6 +601,26 @@
                 </ul>
             </section>
 
+            <section class="left" data-background-image='./images/sample2.jpg' 
+                data-background-size="contain"
+                data-background-color="#333"
+                data-background-opacity="1">
+            </section>
+
+            <section data-markdown data-background-image='./images/background.jpg'
+            data-background-opacity="0.2">
+                <textarea data-template>
+                    ### Problems?
+                    ---
+                    ### Temporal resolutions don't match
+                    ---
+                    ### and better algorithms for larger areas.
+                </textarea>
+            </section>
+            
+
+            
+
             <section class="left" data-background-image='./images/el-20.jpg' 
                 data-background-size="contain"
                 data-background-color="#777"
@@ -490,6 +631,12 @@
                 data-background-size="contain"
                 data-background-color="#777"
                 data-background-opacity="1">
+            </section>
+
+            <section data-background-image='./images/background.jpg' data-background-opacity="0.2"
+                data-background-color="#333">
+                <h2 class="">Land Cover Explorer</h2>
+                <h3 class="fragment">What's has changed?</h3>
             </section>
 
             <section class="left" data-background-image='./images/lulc-ky.png' 
@@ -540,20 +687,14 @@
                 data-background-opacity="1">
             </section>
 
-            <section class="left" data-background-image='./images/background.jpg' 
-            data-markdown data-separator="---" data-background-opacity="0.2">
-                <textarea data-template>
-                    ```python 
-                    https://kygisserver.ky.gov/arcgis/rest/services/GeoprocessingServices/LandCoverChange/GPServer/LandCoverChange/execute?start_year=1985&end_year=2024&bbox=-89.70443,36.456976,-81.884235,39.151921&f=json
-                    ```
-                </textarea>
-            </section>
+            
 
             
 
             <section class="left" data-background-image='./images/background.jpg' 
             data-markdown data-separator="---" data-background-opacity="0.2">
                 <textarea data-template>
+                    #### Send this in a URL string...
                     ```py
                     start_year=1985 # 1985-2023
                     end_year=2024 # 1986-2024
@@ -565,10 +706,20 @@
                 </textarea>
             </section>
 
+            <section class="left" data-background-image='./images/background.jpg' 
+            data-markdown data-separator="---" data-background-opacity="0.2">
+                <textarea data-template>
+                    #### Example URL for REST endpoint
+                    ```python 
+                    https://kygisserver.ky.gov/arcgis/rest/services/GeoprocessingServices/LandCoverChange/GPServer/LandCoverChange/execute?start_year=1985&end_year=2024&bbox=-89.70443,36.456976,-81.884235,39.151921&f=json
+                    ```
+                </textarea>
+            </section>
+
             <section data-background-image='./images/background.jpg' 
             data-markdown data-separator="---" data-background-opacity="0.2">
                 <textarea data-template>
-                    ### Server response
+                    #### Server response
                     ```json
                     "start_year": 1985,
                     "end_year": 2024,
@@ -718,6 +869,15 @@
                         Change between 1985 and 2024, Bowling Green <a href="https://kygisserver.ky.gov/arcgis/rest/services/GeoprocessingServices/LandCoverChange/GPServer/LandCoverChange/execute?start_year=1985&end_year=2024&bbox=-86.687,36.816,-86.169,37.085&f=json"
                             target="_blank">🔗</a>
                     </li> 
+                </ul>
+            </section>
+
+            <section class='left' data-background-image="images/background.jpg" data-background-opacity="0.2">
+                <h3>Sites using endpoint</h3>
+                <ul>
+                    <li class='fragment'>
+                        Land Cover Explorer <a href="https://kygeonet.ky.gov/LandcoverExplorer" target="_blank">🔗</a>
+                    </li>
                 </ul>
             </section>
 
